@@ -1,0 +1,46 @@
+{
+  "general": {
+    "good": ["fine", "excellent", "satisfactory", "adequate"],
+    "bad": ["poor", "awful", "terrible", "inferior"],
+    "important": ["significant", "crucial", "vital", "essential"],
+    "happy": ["joyful", "pleased", "content", "delighted"],
+    "sad": ["unhappy", "sorrowful", "dejected", "melancholy"],
+    "big": ["large", "huge", "massive", "enormous"],
+    "small": ["tiny", "little", "minuscule", "compact"],
+    "fast": ["quick", "rapid", "swift", "hasty"],
+    "slow": ["leisurely", "gradual", "unhurried", "plodding"],
+    "help": ["assist", "support", "aid", "facilitate"],
+    "use": ["utilize", "employ", "operate", "apply"],
+    "make": ["create", "produce", "construct", "build"],
+    "explain": ["clarify", "describe", "define", "illustrate"],
+    "show": ["display", "reveal", "present", "demonstrate"],
+    "interesting": ["fascinating", "engaging", "intriguing", "compelling"]
+  },
+  "scientific": {
+    "analysis": ["examination", "investigation", "study", "scrutiny"],
+    "data": ["information", "statistics", "figures", "facts"],
+    "evidence": ["proof", "confirmation", "substantiation", "validation"],
+    "hypothesis": ["theory", "supposition", "premise", "assumption"],
+    "method": ["procedure", "technique", "approach", "system"],
+    "result": ["outcome", "consequence", "finding", "conclusion"],
+    "research": ["investigation", "study", "experimentation", "exploration"],
+    "theory": ["principle", "concept", "doctrine", "hypothesis"],
+    "variable": ["factor", "element", "condition", "characteristic"]
+  },
+  "medical": {
+    "patient": ["case", "subject", "sufferer"],
+    "treatment": ["therapy", "remedy", "cure", "protocol"],
+    "diagnosis": ["assessment", "evaluation", "conclusion", "opinion"],
+    "symptom": ["indication", "sign", "manifestation", "expression"],
+    "disease": ["illness", "sickness", "disorder", "ailment"],
+    "medication": ["drug", "pharmaceutical", "remedy", "prescription"]
+  },
+  "literature": {
+    "narrative": ["story", "account", "tale", "chronicle"],
+    "character": ["persona", "figure", "protagonist", "individual"],
+    "theme": ["subject", "topic", "motif", "concept"],
+    "plot": ["storyline", "outline", "narrative", "scenario"],
+    "symbolism": ["representation", "imagery", "allegory"],
+    "author": ["writer", "creator", "novelist", "composer"]
+  }
+}
