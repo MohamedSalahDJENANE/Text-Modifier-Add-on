@@ -1,19 +1,234 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Advanced Text Modifier Add-on</title>
-  <style>
-    body { font-family: sans-serif; line-height: 1.6; padding: 2em; max-width: 800px; margin: auto; color: #333; }
-    h1 { color: #111; }
-    .footer { margin-top: 2em; font-size: 0.8em; color: #777; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Text Modifier - Google Docs Add-on</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        /* Styles for the lightbox modal */
+        .lightbox-modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body>
-  <h1>Advanced Text Modifier Add-on for Google Docs</h1>
-  <p>This is the official homepage for the Advanced Text Modifier add-on, available on the Google Workspace Marketplace.</p>
-  <p>This tool helps you refine and "humanize" your text directly within Google Docs using various techniques like synonym replacement, spelling variations, and more, while preserving your document's formatting.</p>
-  <div class="footer">
-    <p><a href="privacy.html">View our Privacy Policy</a></p>
-  </div>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="shadow-md bg-white">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-gray-800">Advanced Text Modifier</div>
+            <!-- This button will eventually link to your marketplace page -->
+            <a href="#" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300">
+                Install Now
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">From AI to Human: Instantly.</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+                The ultimate Google Docs add-on to bypass AI detectors and enhance your writing style, transforming robotic text into natural, human-like prose.
+            </p>
+            <div class="flex justify-center mb-10">
+                 <!-- This button will eventually link to your marketplace page -->
+                <a href="#" class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition duration-300 text-lg">
+                    Get Started - It's Free
+                </a>
+            </div>
+            
+            <!-- Before/After Comparison Section -->
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-left">
+                <!-- Before -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-3 text-center">Before</h3>
+                    <div class="bg-white rounded-lg shadow-2xl p-3">
+                        <img src="https://raw.githubusercontent.com/MohamedSalahDJENANE/Text-Modifier-Add-on/main/before%20quillbot.png" alt="Text before using the modifier, flagged by AI detector" class="rounded-md cursor-pointer lightbox-trigger">
+                    </div>
+                </div>
+                <!-- After -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-3 text-center">After</h3>
+                    <div class="bg-white rounded-lg shadow-2xl p-3">
+                        <img src="https://raw.githubusercontent.com/MohamedSalahDJENANE/Text-Modifier-Add-on/main/after%20quillbot.png" alt="Text after using the modifier, passing AI detection" class="rounded-md cursor-pointer lightbox-trigger">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-3">Powerful Features</h2>
+            <p class="text-gray-600 mb-12">All the tools you need to subtly transform your text.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Feature 1 -->
+                <div class="feature-card text-left p-6 bg-gray-50 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold">Synonym Replacement</h3>
+                    </div>
+                    <p class="text-gray-600">Intelligently swaps words with their synonyms to vary your vocabulary and writing style.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card text-left p-6 bg-gray-50 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                       <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold">Homoglyph Substitution</h3>
+                    </div>
+                    <p class="text-gray-600">Subtly replaces characters with visually identical ones to bypass AI detection algorithms.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card text-left p-6 bg-gray-50 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M9 21v-2a2 2 0 00-2-2H5a2 2 0 00-2 2v2m11-13l-4-4m0 0l-4 4m4-4v12" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold">Spelling Variation</h3>
+                    </div>
+                    <p class="text-gray-600">Introduces regional spelling variations (US/UK English) to alter the text's linguistic fingerprint.</p>
+                </div>
+
+                <!-- Feature 4: AI Watermark Remover -->
+                <div class="feature-card text-left p-6 bg-gray-50 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold">AI Watermark Remover</h3>
+                    </div>
+                    <p class="text-gray-600">Removes invisible characters and excess whitespace often used as watermarks in AI-generated text.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- New Gallery Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">See It In Action</h2>
+                <p class="text-gray-600">A clean and intuitive interface, right inside Google Docs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Screenshot 1 -->
+                <div class="bg-white rounded-lg shadow-xl p-4 transform hover:scale-105 transition-transform duration-300">
+                     <img src="https://raw.githubusercontent.com/MohamedSalahDJENANE/Text-Modifier-Add-on/main/screenshot1.png" alt="Screenshot of the add-on's main interface" class="rounded-md w-full cursor-pointer lightbox-trigger">
+                </div>
+                <!-- Screenshot 2 -->
+                <div class="bg-white rounded-lg shadow-xl p-4 transform hover:scale-105 transition-transform duration-300">
+                     <img src="https://raw.githubusercontent.com/MohamedSalahDJENANE/Text-Modifier-Add-on/main/screenshot2.png" alt="Screenshot showing a feature in use" class="rounded-md w-full cursor-pointer lightbox-trigger">
+                </div>
+                 <!-- Screenshot 3 (spans full width on medium screens) -->
+                <div class="md:col-span-2 bg-white rounded-lg shadow-xl p-4 transform hover:scale-105 transition-transform duration-300">
+                     <img src="https://raw.githubusercontent.com/MohamedSalahDJENANE/Text-Modifier-Add-on/main/screenshot3.png" alt="Screenshot of processed text" class="rounded-md w-full cursor-pointer lightbox-trigger">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-center md:text-left">&copy; 2025 Advanced Text Modifier. All rights reserved.</p>
+            <div class="mt-4 md:mt-0">
+                <a href="https://mohamedsalahdjenane.github.io/Text-Modifier-Add-on/privacy.html" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal HTML -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-image">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('lightbox-modal');
+            const modalImg = document.getElementById('lightbox-image');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const triggerImages = document.querySelectorAll('.lightbox-trigger');
+
+            triggerImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.style.display = "flex";
+                    modalImg.src = this.src;
+                });
+            });
+
+            function closeModal() {
+                modal.style.display = "none";
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
+
+
